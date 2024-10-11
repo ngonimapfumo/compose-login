@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.text.ClickableText
@@ -21,7 +22,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.ngonim.testlogin.R
 
 @Composable
@@ -37,7 +40,12 @@ fun WelcomeScreen(
             .systemBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        SmallTopAppBarExample("Login")
+        SmallTopAppBar(
+            "Login", TextStyle(
+                color = Color.White,
+                fontSize = 24.sp
+            ), false
+        )
         Spacer(Modifier.height(8.dp))
         Image(
             painter = painterResource(id = R.drawable.login),
@@ -49,12 +57,14 @@ fun WelcomeScreen(
         Text(text = "You")
         Text(text = "Lets create things with Compose")
         TextInputLayout(
+            "username",
             modifier = Modifier,
             1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
         Spacer(Modifier.height(8.dp))
         TextInputLayout(
+            "password",
             modifier = Modifier,
             1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
@@ -62,10 +72,13 @@ fun WelcomeScreen(
         Spacer(Modifier.height(8.dp))
         ActionButton(
             text = "Login",
-            isNavigationArrowVisible = true,
-            onClicked = { },
+            isNavigationArrowVisible = false,
+            onClicked = {
+
+
+            },
             colors = ButtonColors(
-                containerColor = Color(0xFFCA1210),
+                containerColor = Color(context!!.resources.getColor(R.color.purple_200, null)),
                 contentColor = Color.White,
                 disabledContentColor = Color.Gray,
                 disabledContainerColor = Color.Gray
@@ -78,10 +91,16 @@ fun WelcomeScreen(
             onClick = {
                 Toast.makeText(context, "Button click", Toast.LENGTH_SHORT).show()
             },
-            modifier = Modifier,
+            modifier = Modifier.padding(10.dp),
         )
 
 
     }
+}
+
+@Preview
+@Composable
+fun Preview() {
+    WelcomeScreen(context = null, modifier = Modifier)
 }
 
