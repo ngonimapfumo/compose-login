@@ -1,5 +1,6 @@
-package com.ngonim.testlogin.ui.screen
+package com.ngonim.testlogin.ui.components
 
+import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -15,6 +16,7 @@ import androidx.compose.ui.text.TextStyle
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SmallTopAppBar(
+    onClicked: () -> Unit,
     text: String,
     textStyle: TextStyle,
     backButtonRequired: Boolean
@@ -32,7 +34,7 @@ fun SmallTopAppBar(
 
         navigationIcon = {
             if (backButtonRequired) {
-                IconButton(onClick = { /* do something */ }) {
+                IconButton(onClick = onClicked ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Localized description"

@@ -1,4 +1,4 @@
-package com.ngonim.testlogin.ui.screen
+package com.ngonim.testlogin.ui.components
 
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions

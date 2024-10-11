@@ -1,7 +1,7 @@
 package com.ngonim.testlogin.ui.screen
 
 import android.content.Context
-import android.widget.Toast
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,6 +26,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ngonim.testlogin.R
+import com.ngonim.testlogin.ResetPassword
+import com.ngonim.testlogin.ui.components.ActionButton
+import com.ngonim.testlogin.ui.components.SmallTopAppBar
+import com.ngonim.testlogin.ui.components.TextInputLayout
 
 @Composable
 fun WelcomeScreen(
@@ -41,16 +45,17 @@ fun WelcomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SmallTopAppBar(
+            onClicked = {},
             "Login", TextStyle(
                 color = Color.White,
                 fontSize = 24.sp
             ), false
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(modifier.height(8.dp))
         Image(
             painter = painterResource(id = R.drawable.login),
             contentDescription = "welcome",
-            modifier = Modifier.size(300.dp)
+            modifier = modifier.size(300.dp)
         )
 
         Text(text = "Hey")
@@ -58,14 +63,14 @@ fun WelcomeScreen(
         Text(text = "Lets create things with Compose")
         TextInputLayout(
             "username",
-            modifier = Modifier,
+            modifier = modifier,
             1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
         Spacer(Modifier.height(8.dp))
         TextInputLayout(
             "password",
-            modifier = Modifier,
+            modifier = modifier,
             1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
         )
@@ -89,9 +94,9 @@ fun WelcomeScreen(
             text = AnnotatedString("Forgot your password?"),
             style = TextStyle(color = Color.Blue),
             onClick = {
-                Toast.makeText(context, "Button click", Toast.LENGTH_SHORT).show()
+                context.startActivity(Intent(context, ResetPassword::class.java))
             },
-            modifier = Modifier.padding(10.dp),
+            modifier = modifier.padding(10.dp),
         )
 
 
