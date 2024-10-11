@@ -11,26 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ngonim.testlogin.ui.screen.WelcomeScreen
+import com.ngonim.testlogin.ui.screen.SignUpScreen
 import com.ngonim.testlogin.ui.theme.TestLoginTheme
 
-class MainActivity : ComponentActivity() {
+class SignUp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             TestLoginTheme {
-                WelcomeScreen(this@MainActivity)
+                SignUpScreen(this)
+                }
             }
         }
-    }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    TestLoginTheme {
-        WelcomeScreen(null)
-    }
-}

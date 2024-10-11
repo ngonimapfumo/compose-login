@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -19,14 +20,15 @@ import com.ngonim.testlogin.ui.components.SmallTopAppBar
 import com.ngonim.testlogin.ui.components.TextInputLayout
 
 @Composable
-fun ResetPasswordScreen(activity: ComponentActivity, modifier: Modifier) {
+fun ResetPasswordScreen(activity: ComponentActivity?, modifier: Modifier) {
 
     Column(modifier = modifier
         .fillMaxWidth()
-        .fillMaxSize()) {
+        .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally) {
 
         SmallTopAppBar(
-            onClicked = { activity.onBackPressedDispatcher.onBackPressed() },
+            onClicked = { activity!!.onBackPressedDispatcher.onBackPressed() },
             text = "Reset Password", textStyle = TextStyle(
                 fontSize = 24.sp,
                 color = Color.White
