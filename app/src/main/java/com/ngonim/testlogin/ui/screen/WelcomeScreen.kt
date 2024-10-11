@@ -55,14 +55,13 @@ fun WelcomeScreen(
         )
         Spacer(modifier.height(8.dp))
         Image(
-            painter = painterResource(id = R.drawable.login),
+            painter = painterResource(id = R.drawable.key),
             contentDescription = "welcome",
             modifier = modifier.size(300.dp)
         )
 
-        Text(text = "Hey")
-        Text(text = "You")
-        Text(text = "Lets create things with Compose")
+        Text(text = "Welcome to Bla Bla")
+        Text(text = "Please Sign in to proceed")
         TextInputLayout(
             "username",
             modifier = modifier,
@@ -80,7 +79,7 @@ fun WelcomeScreen(
         )
         Spacer(Modifier.height(8.dp))
         ActionButton(
-            text = "Login",
+            text = "Sign In",
             isNavigationArrowVisible = false,
             onClicked = {
 
@@ -88,6 +87,21 @@ fun WelcomeScreen(
             },
             colors = ButtonColors(
                 containerColor = Color(context!!.resources.getColor(R.color.purple_200, null)),
+                contentColor = Color.White,
+                disabledContentColor = Color.Gray,
+                disabledContainerColor = Color.Gray
+            ),
+            shadowColor = Color.Blue
+        )
+        ActionButton(
+            text = "Sign Up",
+            isNavigationArrowVisible = false,
+            onClicked = {
+
+
+            },
+            colors = ButtonColors(
+                containerColor = Color(context.resources.getColor(R.color.purple_200, null)),
                 contentColor = Color.White,
                 disabledContentColor = Color.Gray,
                 disabledContainerColor = Color.Gray
