@@ -22,6 +22,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -65,14 +67,16 @@ fun WelcomeScreen(
             "username",
             modifier = modifier,
             1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+            VisualTransformation.None, false, null
         )
         Spacer(Modifier.height(8.dp))
         TextInputLayout(
             "password",
             modifier = modifier,
             1,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            PasswordVisualTransformation(), true, R.drawable.baseline_visibility_24
         )
         Spacer(Modifier.height(8.dp))
         ActionButton(
