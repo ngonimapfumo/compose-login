@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TestLoginTheme {
-                WelcomeScreen()
+                WelcomeScreen(this@MainActivity)
             }
         }
     }
@@ -31,6 +31,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     TestLoginTheme {
-        WelcomeScreen()
+        WelcomeScreen(null, modifier = Modifier)
     }
 }
