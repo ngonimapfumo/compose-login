@@ -20,7 +20,7 @@ class SignUp : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TestLoginTheme {
-                SignUpScreen(this)
+                SignUpScreen(this,Modifier)
                 }
             }
         }

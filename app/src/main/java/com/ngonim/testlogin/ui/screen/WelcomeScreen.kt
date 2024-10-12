@@ -36,6 +36,9 @@ import com.ngonim.testlogin.SignUp
 import com.ngonim.testlogin.ui.components.ActionButton
 import com.ngonim.testlogin.ui.components.SmallTopAppBar
 import com.ngonim.testlogin.ui.components.TextInputLayout
+import com.ngonim.testlogin.ui.theme.DeepOrange50
+import com.ngonim.testlogin.ui.theme.DeepOrangeA100
+import com.ngonim.testlogin.ui.theme.Indigo600
 import com.ngonim.testlogin.ui.theme.Pink40
 
 @Composable
@@ -90,7 +93,7 @@ fun WelcomeScreen(
 
                 },
                 colors = ButtonColors(
-                    containerColor = Pink40,
+                    containerColor = Indigo600,
                     contentColor = Color.White,
                     disabledContentColor = Color.Gray,
                     disabledContainerColor = Color.Gray
@@ -105,7 +108,7 @@ fun WelcomeScreen(
 
                 },
                 colors = ButtonColors(
-                    containerColor = Pink40,
+                    containerColor = Indigo600,
                     contentColor = Color.White,
                     disabledContentColor = Color.Gray,
                     disabledContainerColor = Color.Gray
