@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,39 +48,43 @@ fun SignUpScreen(activity: ComponentActivity?, modifier: Modifier) {
 
         TextInputLayout(
             label = "Name",
+            TextStyle(color = Color.Black),
             modifier = modifier,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            visualTransformation = VisualTransformation.None,
+            makeTextVisible = true,
             needsTrailingIcon = false,
             icon = null
         )
         TextInputLayout(
             label = "Email",
+            TextStyle(color = Color.Black),
             modifier = modifier,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            visualTransformation = VisualTransformation.None,
+            makeTextVisible = true,
             needsTrailingIcon = false,
             icon = null
         )
 
         TextInputLayout(
             label = "Contact no.",
+            TextStyle(color = Color.Black),
             modifier = modifier,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-            visualTransformation = VisualTransformation.None,
+            makeTextVisible = true,
             needsTrailingIcon = false,
             icon = null
         )
 
         TextInputLayout(
             label = "Password",
+            TextStyle(color = Color.Black),
             modifier = modifier,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            visualTransformation = VisualTransformation.None,
+            makeTextVisible = false,
             needsTrailingIcon = true,
             icon = R.drawable.baseline_visibility_24
         )
@@ -109,7 +114,7 @@ fun SignUpScreen(activity: ComponentActivity?, modifier: Modifier) {
             onClick = {
 
             },
-            modifier = modifier.padding(10.dp),
+            modifier = modifier.padding(2.dp),
         )
 
 

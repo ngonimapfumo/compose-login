@@ -54,22 +54,9 @@ fun ActionButton(
 
     }
 }
-
-
 @Preview
 @Composable
-private fun ActionButtonPreview() {/*
-    TestLoginTheme {
-        ActionButton(
-            text = "Boohoo",
-            isNavigationArrowVisible = true,
-            onClicked = { *//*TODO*//* },
-            colors = ButtonDefaults.buttonColors(
-                contentColor = Color.White,
-                containerColor = Color.Green
-            ),
-            shadowColor = Color.Green
-        )
-    }*/
+fun Prev(){
+    
 }
 

@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
@@ -20,10 +21,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun TextInputLayout(
     label: String,
+    textStyle: TextStyle?,
     modifier: Modifier,
     maxLines: Int,
     keyboardOptions: KeyboardOptions,
-    visualTransformation: VisualTransformation,
+    makeTextVisible: Boolean?,
     needsTrailingIcon: Boolean,
     icon: Int?
 ) {
@@ -31,13 +33,12 @@ fun TextInputLayout(
         mutableStateOf("")
     }
 
-    var passwordVisibility: Boolean by remember { mutableStateOf(false) }
+    var passwordVisibility: Boolean by remember { mutableStateOf(makeTextVisible!!) }
 
     OutlinedTextField(
         visualTransformation = if (passwordVisibility) {
             VisualTransformation.None
-        }
-        else {
+        } else {
             PasswordVisualTransformation()
         },
         trailingIcon = {
@@ -56,6 +57,7 @@ fun TextInputLayout(
             autoCorrect = false,
             keyboardType = keyboardOptions.keyboardType
 
-        ), label = { Text(text = label) }
+        ), label = { Text(text = label) },
+        textStyle = textStyle!!
     )
 }
